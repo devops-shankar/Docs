@@ -103,7 +103,7 @@ kubectl create -f https://docs.projectcalico.org/v3.9/manifests/calico.yaml
 ##### Cluster join command
 ```sh
 kubeadm token create --print-join-command
-kubeadm reset -> in caase any issue with installation, restart from step1 after this.
+kubeadm reset -> in case of any issue with installation, restart from  step it filed else unnistall abd install kubelet.
 ```
 ## On Kworker
 ##### Join the cluster
