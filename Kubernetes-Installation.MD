@@ -31,6 +31,7 @@ yum install -y -q docker-ce >/dev/null 2>&1
 ```sh
 systemctl enable docker
 systemctl start docker
+hkconfig docker0.  on
 ```
 ##### Disable SELinux
 ```sh
@@ -77,6 +78,7 @@ yum install -y kubeadm-1.15.6-0.x86_64 kubelet-1.15.6-0.x86_64 kubectl-1.15.6-0.
 ```sh
 systemctl enable kubelet
 systemctl start kubelet
+chkconfig kubelet on
 ```
 ## On kmaster
 ##### Initialize Kubernetes Cluster
@@ -101,6 +103,7 @@ kubectl create -f https://docs.projectcalico.org/v3.9/manifests/calico.yaml
 ##### Cluster join command
 ```sh
 kubeadm token create --print-join-command
+kubeadm reset -> in caase any issue with installation, restart from step1 after this.
 ```
 ## On Kworker
 ##### Join the cluster
