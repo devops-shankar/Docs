@@ -84,6 +84,7 @@ chkconfig kubelet on
 ##### Initialize Kubernetes Cluster
 ```sh
 kubeadm init --apiserver-advertise-address=<MasterServerIP> --pod-network-cidr=192.168.0.0/16
+kubeadm reset -> in case of any issue with init.
 ```
 ##### Copy kube config
 To be able to use kubectl command to connect and interact with the cluster, the user needs kube config file.
@@ -103,7 +104,6 @@ kubectl create -f https://docs.projectcalico.org/v3.9/manifests/calico.yaml
 ##### Cluster join command
 ```sh
 kubeadm token create --print-join-command
-kubeadm reset -> in case of any issue with installation, restart from  step it filed else unnistall abd install kubelet.
 ```
 ## On Kworker
 ##### Join the cluster
