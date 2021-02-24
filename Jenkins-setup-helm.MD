@@ -16,7 +16,19 @@ helm
 ## Copy config file from Kubernetes master to Jenkins home directory
 ```sh
 mkdir /var/lib/jenkins/.kube
-copy config file under .kube directory with jenkins ownership
+copy config file (from below location) under .kube directory with jenkins ownership.
+#kubeadm -> /etc/kubernetes/admin.conf
+#CloudShell -> .kube/config
+
+#if want to copy file (in place of copy/paste) to Jenkins server 
+# on Jenkins server
+vi /etc/ssh/sshd_config
+  Enable PasswordAuthentication
+service sshd restart
+passwd ec2-user
+
+From Console: scp .kube/config ec2-user@<jenkinsSIP>:/tmp
+
 ```
 
 ## Install tiller in Kubernetes master
