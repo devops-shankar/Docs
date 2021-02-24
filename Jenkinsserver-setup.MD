@@ -32,7 +32,15 @@ change shell from /bin/false to /bin/bash
 
 ## provide permissions to jenkins user in jenkins server to access docker
 ```sh
+  cat /etc/group
   sudo groupadd docker
   sudo usermod -aG docker jenkins
   sudo chmod 777 /var/run/docker.sock
+```
+
+## Add jenkins user to sudoers for helm
+```sh
+  vi /etc/sudoers
+  #Add below root, under "Allow root to rn any commands anywhere"
+  jenkins ALL=(ALL) ALL NOPASSWD: ALL
 ```
