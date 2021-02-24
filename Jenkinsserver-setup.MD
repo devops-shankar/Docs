@@ -42,5 +42,5 @@ change shell from /bin/false to /bin/bash
 ```sh
   vi /etc/sudoers
   #Add below root, under "Allow root to rn any commands anywhere"
-  jenkins ALL=(ALL) ALL NOPASSWD: ALL
+  jenkins ALL=(ALL) NOPASSWD: ALL
 ```
