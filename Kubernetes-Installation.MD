@@ -31,7 +31,7 @@ yum install -y -q docker-ce >/dev/null 2>&1
 ```sh
 systemctl enable docker
 systemctl start docker
-hkconfig docker0.  on
+chkconfig docker on
 ```
 ##### Disable SELinux
 ```sh
@@ -40,6 +40,7 @@ sed -i --follow-symlinks 's/^SELINUX=enforcing/SELINUX=disabled/' /etc/sysconfig
 ```
 ##### Disable Firewall
 ```sh
+# Not required
 systemctl disable firewalld
 systemctl stop firewalld
 ```
@@ -84,7 +85,7 @@ chkconfig kubelet on
 ##### Initialize Kubernetes Cluster
 ```sh
 kubeadm init --apiserver-advertise-address=<MasterServerIP> --pod-network-cidr=192.168.0.0/16
-kubeadm reset -> in case of any issue with init.
+#kubeadm reset -> in case of any issue with init.
 ```
 ##### Copy kube config
 To be able to use kubectl command to connect and interact with the cluster, the user needs kube config file.
