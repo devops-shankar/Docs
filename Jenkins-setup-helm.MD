@@ -12,7 +12,10 @@ chmod 700 get_helm.sh
 helm version
 helm
 ```
-
+## Enable 10250 on Master and Worker Nodes for helm communication
+```sh
+port: 10250
+```
 ## Copy config file from Kubernetes master to Jenkins home directory
 ```sh
 mkdir /var/lib/jenkins/.kube
