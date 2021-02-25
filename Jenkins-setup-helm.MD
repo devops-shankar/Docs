@@ -42,6 +42,7 @@ kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceac
 ## Execute below command in Jenkins server to install tiller on cluster
 ```sh
 helm init --service-account tiller
+# We may need to install gcloud if it fails. Needs Python 2.7, by default Amazon Linux comes with Pythin v2.6. 
 ```
 ## To verify that Tiller is running, list the pods in the kube-system namespace:
 ```sh
