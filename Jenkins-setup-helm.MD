@@ -15,6 +15,7 @@ helm
 ## Enable 10250 on Master and Worker Nodes for helm communication
 ```sh
 port: 10250
+#Did not try this during demo.
 ```
 ## Copy config file from Kubernetes master to Jenkins home directory
 ```sh
